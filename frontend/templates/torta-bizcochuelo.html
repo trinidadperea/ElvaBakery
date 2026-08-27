@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elva Bakery</title>
+
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/personalizadas.css">
+
+</head>
+
+
+
+
+<body>
+    <main class="personalizadas-page">
+
+        <header class="personalizadas-header">
+
+            <a href="crear-torta.html" class="back-button">
+                ← Volver
+            </a>
+
+            <h1>Personalizá tu torta</h1>
+
+            <p>
+                Elegí cada detalle y armá la torta perfecta para vos
+            </p>
+
+        </header>
+
+
+        <section class="cake-builder">
+
+            <div class="cake-intro">
+
+                <h2>Descubrí tu torta por dentro</h2>
+
+                <p>
+                    Hacé clic en la torta para descubrir sus capas
+                </p>
+
+            </div>
+
+            <!-- TAMAÑO -->
+
+            <div class="size-selector">
+
+                <h3>Elegí el tamaño</h3>
+
+                <div class="size-options">
+
+                    <button
+                        class="size-option active"
+                        data-size="18"
+                    >
+                        <strong>18 cm</strong>
+                        <span>12-15 porciones </span>
+                    </button>
+
+                    <button
+                        class="size-option"
+                        data-size="22"
+                    >
+                        <strong>22 cm</strong>
+                        <span>20-25 porciones</span>
+                    </button>
+
+                </div>
+
+            </div>
+            
+            <!-- CONSTRUCTOR -->
+
+            <div class="cake-customizer">
+
+                <!-- TORTA -->
+
+                <div class="cake-preview">
+
+                    <div class="cake size-18">
+
+                        <div class="cake-decoration">
+                            ✦
+                        </div>
+
+                        <!-- BIZCOCHUELO SUPERIOR -->
+                        <div class="cake-layer cake-sponge layer-sponge-1">
+                            <span>Bizcochuelo</span>
+                        </div>
+
+                        <!-- RELLENO 1 -->
+                        <div
+                            class="cake-layer cake-filling filling-layer-1"
+                            data-layer="1"
+                        >
+                            <span>Relleno 1</span>
+                        </div>
+
+                        <!-- BIZCOCHUELO -->
+                        <div class="cake-layer cake-sponge layer-sponge-2">
+                            <span>Bizcochuelo</span>
+                        </div>
+
+                        <!-- RELLENO 2 -->
+                        <div
+                            class="cake-layer cake-filling filling-layer-2"
+                            data-layer="2"
+                        >
+                            <span>Relleno 2</span>
+                        </div>
+
+                        <!-- BIZCOCHUELO -->
+                        <div class="cake-layer cake-sponge layer-sponge-3">
+                            <span>Bizcochuelo</span>
+                        </div>
+
+                        <!-- RELLENO 3 -->
+                        <div
+                            class="cake-layer cake-filling filling-layer-3"
+                            data-layer="3"
+                        >
+                            <span>Relleno 3</span>
+                        </div>
+
+                        <!-- BIZCOCHUELO INFERIOR -->
+                        <div class="cake-layer cake-sponge layer-sponge-4">
+                            <span>Bizcochuelo</span>
+                        </div>
+
+                        <div class="cake-base"></div>
+
+                    </div>
+
+
+                    <button id="toggleCake" class="cake-button">
+                        Ver la torta por dentro
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                    OPCIONES
+                ========================= -->
+
+                <div class="filling-selector">
+
+                    <h3>Elegí tus rellenos</h3>
+
+                    <p class="filling-subtitle">
+                        Personalizá cada capa de tu torta
+                    </p>
+
+
+                    <!-- CAPA 1 -->
+
+                    <div class="layer-selector active">
+
+                        <h4>
+                            Capa 1
+                            <span>Primer relleno</span>
+                        </h4>
+
+                        <div class="filling-options"> </div>
+                    
+
+                    </div>
+
+
+                    <!-- CAPA 2 -->
+
+                    <div class="layer-selector active">
+
+                        <h4>
+                            Capa 2
+                            <span>Segundo relleno</span>
+                        </h4>
+
+
+                        <div class="filling-options">
+
+                            <!-- Acá JS va a reutilizar las opciones -->
+
+                        </div>
+
+                       
+
+                    </div>
+
+
+                    <!-- CAPA 3 -->
+
+                    <div class="layer-selector">
+
+                        <h4>
+                            Capa 3
+                            <span>Tercer relleno</span>
+                        </h4>
+
+
+                        <div class="filling-options">
+
+                            <!-- Acá JS va a reutilizar las opciones -->
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="order-section">
+
+                <button id="whatsappButton" class="whatsapp-button">
+                    Pedir mi torta por WhatsApp
+                </button>
+
+            </div>
+
+        </section>
+            
+
+    </main>
+    <script src="../static/js/personalizadas.js"></script>
+    <script src="../static/js/footer.js"></script>
+</body>
+
+
+

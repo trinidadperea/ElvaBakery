@@ -1,0 +1,1081 @@
+/* =========================
+   PÁGINA
+========================= */
+
+.personalizadas-page {
+    min-height: 100vh;
+    padding: 60px 20px 80px;
+    position: relative;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.personalizadas-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.personalizadas-header h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(2.8rem, 6vw, 5rem);
+
+    font-weight: normal;
+
+    margin-bottom: 12px;
+}
+
+.personalizadas-header p {
+    font-size: 1rem;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   VOLVER
+========================= */
+
+.back-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+
+    color: var(--texto);
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+    z-index: 2;
+}
+
+.back-button:hover {
+    color: var(--rosa-oscuro);
+    transform: translateX(-4px);
+}
+
+/* =========================
+   OPCIONES
+========================= */
+
+.personalizadas-options {
+
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   OPCIÓN
+========================= */
+
+.personalizada-option {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 180px;
+
+    padding: 30px;
+
+    background: rgba(255, 249, 245, 0.75);
+
+    border: 1px solid rgba(199, 123, 145, 0.2);
+
+    border-radius: 22px;
+
+    color: var(--texto);
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.personalizada-option:hover {
+
+    transform: translateY(-6px);
+
+    background: var(--rosa);
+
+    color: white;
+
+    box-shadow:
+        0 15px 30px rgba(199, 123, 145, 0.25);
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.option-content {
+    max-width: 600px;
+}
+
+.personalizada-option h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 1.8rem;
+
+    font-weight: normal;
+
+    margin-bottom: 10px;
+}
+
+.personalizada-option p {
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+
+    opacity: 0.7;
+}
+
+.personalizada-option:hover p {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   FLECHA
+========================= */
+
+.personalizada-option .arrow {
+
+    font-size: 1.8rem;
+
+    opacity: 0;
+
+    transform: translateX(-10px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.personalizada-option:hover .arrow {
+
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+
+
+/* =========================
+   BUILDER
+========================= */
+
+.cake-builder {
+    max-width: 900px;
+    margin: 0 auto;
+
+    text-align: center;
+
+    background: rgba(255, 249, 245, 0.55);
+
+    border-radius: 30px;
+
+    padding: 50px 30px 60px;
+
+    box-shadow:
+        0 15px 40px rgba(89, 70, 75, 0.06);
+}
+
+.cake-intro h2 {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.cake-intro p {
+    opacity: 0.7;
+    margin-bottom: 50px;
+}
+
+/* =========================
+   TAMAÑOS
+========================= */
+
+.size-selector {
+    margin-bottom: 45px;
+}
+
+.size-selector h3 {
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-bottom: 18px;
+}
+
+.size-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.size-option {
+    width: 180px;
+
+    padding: 16px 20px;
+
+    border: 1px solid rgba(199, 123, 145, 0.25);
+
+    border-radius: 16px;
+
+    background: rgba(255, 249, 245, 0.7);
+
+    color: var(--texto);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.size-option strong {
+    display: block;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.2rem;
+
+    font-weight: normal;
+
+    margin-bottom: 5px;
+}
+
+.size-option span {
+    display: block;
+
+    font-size: 0.75rem;
+
+    opacity: 0.65;
+}
+
+.size-option:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--rosa);
+}
+
+.size-option.active {
+    background: var(--rosa);
+
+    color: white;
+
+    border-color: var(--rosa);
+
+    box-shadow:
+        0 8px 20px rgba(199, 123, 145, 0.2);
+}
+
+/* =========================
+   TORTA
+========================= */
+
+/* =========================
+   TAMAÑO VISUAL DE LA TORTA
+========================= */
+
+.cake-container {
+    height: 390px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.cake {
+    width: 300px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* 18 cm */
+
+.cake.size-18 .cake-layer {
+    width: 240px;
+}
+
+.cake.size-18 .cake-base {
+    width: 260px;
+}
+
+
+/* 22 cm */
+
+.cake.size-22 .cake-layer {
+    width: 290px;
+}
+
+.cake.size-22 .cake-base {
+    width: 310px;
+}
+
+
+/* =========================
+   CAPAS
+========================= */
+
+.cake-layer {
+    width: 260px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.7s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================
+   BIZCOCHUELO
+========================= */
+
+.cake-sponge {
+    height: 55px;
+
+    background: #d9a06f;
+
+    border: 4px solid #c88b5b;
+
+    box-shadow:
+        inset 0 -8px 0 rgba(120, 70, 35, 0.12),
+        0 5px 10px rgba(89, 70, 75, 0.08);
+}
+
+
+/* =========================
+   RELLENOS
+========================= */
+
+.cake-filling {
+    height: 35px;
+
+    background: #fff1d6;
+
+    border-left: 4px solid #e5c99b;
+    border-right: 4px solid #e5c99b;
+
+    box-shadow:
+        0 4px 8px rgba(89, 70, 75, 0.06);
+}
+
+/* =========================
+   RELLENOS
+========================= */
+
+.filling-selector {
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+}
+
+.filling-selector h3 {
+    font-family: Georgia, serif;
+
+    font-size: 1.2rem;
+
+    font-weight: normal;
+
+    margin-bottom: 5px;
+}
+
+.filling-subtitle {
+    font-size: 0.85rem;
+
+    opacity: 0.65;
+
+    margin-bottom: 20px;
+}
+
+
+.filling-options {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+.filling-option {
+    padding: 16px 18px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(199, 123, 145, 0.25);
+
+    background: rgba(255, 249, 245, 0.7);
+
+    color: var(--texto);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.filling-option strong {
+    font-family: Arial, sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: normal;
+
+    line-height: 1.4;
+}
+
+
+.filling-option:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--rosa);
+}
+
+
+.filling-option.active {
+    background: var(--rosa);
+
+    color: white;
+
+    border-color: var(--rosa);
+
+    box-shadow:
+        0 8px 20px rgba(199, 123, 145, 0.2);
+}
+
+/* =========================
+   CONSTRUCTOR
+========================= */
+
+.cake-customizer {
+    display: grid;
+
+    grid-template-columns: 1fr 1.2fr;
+
+    gap: 60px;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    align-items: start;
+}
+
+
+/* =========================
+   PREVIEW TORTA
+========================= */
+
+.cake-preview {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    position: sticky;
+
+    top: 30px;
+}
+
+
+.cake-preview .cake {
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   SELECTOR
+========================= */
+
+.filling-selector {
+    width: 100%;
+
+    text-align: left;
+}
+
+.filling-selector h3 {
+    font-family: Georgia, serif;
+
+    font-size: 1.7rem;
+
+    font-weight: normal;
+
+    margin-bottom: 5px;
+}
+
+.filling-subtitle {
+    font-size: 0.85rem;
+
+    opacity: 0.65;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   CAPAS
+========================= */
+
+.layer-selector {
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    background: rgba(255, 249, 245, 0.55);
+
+    border: 1px solid rgba(199, 123, 145, 0.15);
+
+    border-radius: 18px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.layer-selector.active {
+    border-color: var(--rosa);
+
+    box-shadow:
+        0 8px 20px rgba(199, 123, 145, 0.1);
+}
+
+
+.layer-selector h4 {
+    font-family: Georgia, serif;
+
+    font-size: 1.1rem;
+
+    font-weight: normal;
+
+    margin-bottom: 12px;
+}
+
+
+.layer-selector h4 span {
+    font-family: Arial, sans-serif;
+
+    font-size: 0.75rem;
+
+    opacity: 0.55;
+
+    margin-left: 8px;
+}
+
+
+/* =========================
+   CHECKLIST RELLENOS
+========================= */
+
+.filling-options {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.filling-option {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 8px 4px;
+
+    cursor: pointer;
+
+    color: var(--texto);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Ocultamos el radio original */
+
+.filling-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* =========================
+   CÍRCULO
+========================= */
+
+.check-circle {
+    width: 19px;
+    height: 19px;
+
+    min-width: 19px;
+
+    border-radius: 50%;
+
+    border: 1.5px solid var(--rosa);
+
+    background: transparent;
+
+    position: relative;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Círculo seleccionado */
+
+.filling-option input:checked + .check-circle {
+    background: var(--rosa);
+
+    border-color: var(--rosa);
+
+    transform: scale(1.05);
+}
+
+
+/* Puntito interno */
+
+.filling-option input:checked + .check-circle::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+/* =========================
+   OTRA OPCIÓN
+========================= */
+/* =========================
+   OPCIÓN "OTRA"
+========================= */
+
+.other-option {
+    display: grid;
+    grid-template-columns: 19px auto 1fr;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+}
+
+
+/* Círculo */
+.other-option .check-circle {
+    grid-column: 1;
+}
+
+
+/* Texto "Otra:" */
+.other-option .filling-name {
+    grid-column: 2;
+
+    white-space: nowrap;
+}
+
+
+/* Campo para escribir */
+.other-filling-input {
+    grid-column: 3;
+
+    width: 100%;
+    min-width: 0;
+
+    border: none;
+    border-bottom: 1px solid rgba(199, 123, 145, 0.4);
+
+    background: transparent;
+
+    padding: 5px 4px;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.82rem;
+
+    color: var(--texto);
+
+    outline: none;
+
+    transition: border-color 0.3s ease;
+}
+
+
+.other-filling-input:focus {
+    border-bottom-color: var(--rosa);
+}
+
+
+.other-filling-input:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.filling-name {
+    font-size: 0.82rem;
+
+    line-height: 1.35;
+}
+
+
+.filling-option:hover {
+    transform: translateX(3px);
+
+    color: var(--rosa-oscuro);
+}
+
+
+
+/* =========================
+   COLORES DE RELLENOS
+========================= */
+
+.filling-dulce-merengue-crema {
+    background: #e8b47d;
+}
+
+.filling-dulce-crema-durazno {
+    background: #f5f586;
+}
+
+.filling-dulce-crema-oreo {
+    background: #d6c3bb;
+}
+
+.filling-dulce-frutilla-crema-merengue {
+    background: #e7a4b2;
+}
+
+.filling-dulce-frutilla-crema {
+    background: #e5a6af;
+}
+
+.filling-crema-durazno {
+    background: #f6cda8;
+}
+
+.filling-crema-frutilla {
+    background: #efb2bd;
+}
+
+/* =========================
+   BASE
+========================= */
+
+.cake-base {
+    width: 280px;
+    height: 18px;
+
+    background: #c88b5b;
+
+    border-radius: 0 0 15px 15px;
+}
+
+
+/* =========================
+   TEXTO DE CAPAS
+========================= */
+
+.cake-layer span {
+    opacity: 0;
+
+    font-size: 0.8rem;
+
+    background: rgba(255, 249, 245, 0.9);
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    transition: opacity 0.3s ease;
+}
+
+.cake-layer:hover span {
+    opacity: 1;
+}
+
+
+/* =========================
+   DECORACIÓN
+========================= */
+
+.cake-decoration {
+    font-size: 2rem;
+
+    margin-bottom: -5px;
+
+    color: var(--rosa-oscuro);
+
+    transition:
+        transform 0.6s ease;
+}
+
+/* =========================
+   TORTA ABIERTA
+========================= */
+
+.cake.open .cake-decoration {
+    transform: translateY(-55px);
+}
+
+
+.cake.open .layer-sponge-1 {
+    transform: translateY(-45px);
+}
+
+
+.cake.open .filling-layer-1 {
+    transform: translateY(-30px);
+}
+
+
+.cake.open .layer-sponge-2 {
+    transform: translateY(-15px);
+}
+
+
+.cake.open .filling-layer-2 {
+    transform: translateY(15px);
+}
+
+
+.cake.open .layer-sponge-3 {
+    transform: translateY(30px);
+}
+
+
+.cake.open .filling-layer-3 {
+    transform: translateY(45px);
+}
+
+
+.cake.open .layer-sponge-4 {
+    transform: translateY(60px);
+}
+
+
+.cake.open .cake-base {
+    transform: translateY(65px);
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+.cake-button {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    background: var(--rosa);
+
+    color: white;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cake-button:hover {
+    background: var(--rosa-oscuro);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 20px rgba(199, 123, 145, 0.25);
+}
+
+/* =========================
+   PEDIDO WHATSAPP
+========================= */
+
+.order-section {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.whatsapp-button {
+    border: none;
+
+    padding: 16px 28px;
+
+    border-radius: 30px;
+
+    background: var(--rosa);
+
+    color: white;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background: var(--rosa-oscuro);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 20px rgba(199, 123, 145, 0.25);
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .personalizadas-page {
+        padding: 70px 20px 50px;
+    }
+
+    .personalizadas-header {
+        margin-bottom: 40px;
+    }
+
+    .personalizadas-header h1 {
+        font-size: 2.7rem;
+    }
+
+    .personalizadas-options {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .personalizada-option {
+        min-height: 140px;
+        padding: 25px 22px;
+    }
+
+    .personalizada-option h2 {
+        font-size: 1.5rem;
+    }
+
+    .personalizada-option p {
+        font-size: 0.82rem;
+    }
+
+    .personalizada-option .arrow {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .back-button {
+        top: 25px;
+        left: 20px;
+        font-size: 0.85rem;
+        padding: 8px 13px;
+    }
+
+
+    .cake-builder {
+        padding: 35px 15px 45px;
+        border-radius: 22px;
+    }
+
+    .cake-intro h2 {
+        font-size: 1.6rem;
+    }
+
+    .cake {
+        transform: scale(0.85);
+        margin-top: -15px;
+        margin-bottom: 20px;
+    }
+
+    .filling-option {
+        padding: 8px 4px;
+    }
+
+    .filling-name {
+        font-size: 0.78rem;
+    }
+
+
+}

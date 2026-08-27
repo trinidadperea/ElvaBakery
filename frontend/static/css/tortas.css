@@ -1,0 +1,264 @@
+/* =========================
+   PÁGINA
+========================= */
+
+.tortas-page {
+    min-height: 100vh;
+    padding: 40px 30px 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.tortas-header {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    text-align: center;
+    position: relative;
+}
+
+.tortas-header h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.tortas-header p {
+    font-size: 1rem;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   VOLVER
+========================= */
+
+.back-button {
+    position: absolute;
+    left: 0;
+    top: 10px;
+
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 0.95rem;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.back-button:hover {
+    color: var(--rosa-oscuro);
+    transform: translateX(-4px);
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.tortas-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.torta-card {
+    background: var(--crema);
+    border-radius: 22px;
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(89, 70, 75, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.torta-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(89, 70, 75, 0.15);
+}
+
+
+/* =========================
+   IMAGEN
+========================= */
+
+.torta-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.torta-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+
+/* =========================
+   ZOOM
+========================= */
+
+.torta-card:hover .torta-image img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.torta-info {
+    padding: 20px;
+}
+
+.torta-info h2 {
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.torta-info p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.7;
+    margin-bottom: 14px;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--rosa-oscuro);
+    font-size: 1rem;
+}
+
+ /* =========================
+   BOTÓN WHATSAPP
+========================= */
+
+.whatsapp-button {
+
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: var(--rosa);
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.whatsapp-button:hover {
+
+    background: var(--rosa-oscuro);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 18px rgba(199, 123, 145, 0.25);
+}
+
+
+.whatsapp-button:active {
+
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .tortas-page {
+        padding: 30px 14px 50px;
+    }
+
+    .tortas-header {
+        margin-bottom: 30px;
+    }
+
+    .tortas-header h1 {
+        font-size: 2.8rem;
+    }
+
+    .back-button {
+        position: static;
+        display: block;
+        text-align: left;
+        margin-bottom: 25px;
+    }
+
+    .tortas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .torta-card {
+        border-radius: 15px;
+    }
+
+    .torta-info {
+        padding: 12px;
+    }
+
+    .torta-info h2 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .torta-info p {
+        font-size: 0.75rem;
+        margin-bottom: 8px;
+    }
+
+    .price {
+        font-size: 0.85rem;
+    }
+}

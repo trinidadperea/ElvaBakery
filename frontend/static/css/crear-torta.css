@@ -1,0 +1,266 @@
+/* =========================
+   PÁGINA
+========================= */
+
+.crear-torta-page {
+
+    min-height: 100vh;
+
+    padding: 60px 20px 80px;
+
+    position: relative;
+}
+
+
+/* =========================
+   VOLVER
+========================= */
+
+.back-button {
+
+    position: absolute;
+
+    top: 30px;
+    left: 30px;
+
+    color: var(--texto);
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+    z-index: 2;
+}
+
+.back-button:hover {
+
+    color: var(--rosa-oscuro);
+
+    transform: translateX(-4px);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.crear-torta-header {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.crear-torta-header h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(2.8rem, 6vw, 5rem);
+
+    font-weight: normal;
+
+    margin-bottom: 12px;
+}
+
+.crear-torta-header p {
+
+    font-size: 1rem;
+
+    opacity: 0.7;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   OPCIONES
+========================= */
+
+.crear-torta-options {
+
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   OPCIÓN
+========================= */
+
+.crear-torta-option {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-height: 190px;
+
+    padding: 30px;
+
+    background: rgba(255, 249, 245, 0.75);
+
+    border: 1px solid rgba(199, 123, 145, 0.2);
+
+    border-radius: 22px;
+
+    color: var(--texto);
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.crear-torta-option:hover {
+
+    transform: translateY(-6px);
+
+    background: var(--rosa);
+
+    color: white;
+
+    box-shadow:
+        0 15px 30px rgba(199, 123, 145, 0.25);
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.option-content {
+
+    max-width: 600px;
+}
+
+.crear-torta-option h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 1.7rem;
+
+    font-weight: normal;
+
+    margin-bottom: 10px;
+}
+
+.crear-torta-option p {
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+
+    opacity: 0.7;
+}
+
+.crear-torta-option:hover p {
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   FLECHA
+========================= */
+
+.crear-torta-option .arrow {
+
+    font-size: 1.8rem;
+
+    opacity: 0;
+
+    transform: translateX(-10px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.crear-torta-option:hover .arrow {
+
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .crear-torta-page {
+
+        padding: 70px 20px 50px;
+    }
+
+    .back-button {
+
+        top: 25px;
+
+        left: 20px;
+    }
+
+    .crear-torta-header {
+
+        margin-bottom: 40px;
+    }
+
+    .crear-torta-header h1 {
+
+        font-size: 2.7rem;
+    }
+
+    .crear-torta-options {
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .crear-torta-option {
+
+        min-height: 150px;
+
+        padding: 25px 22px;
+    }
+
+    .crear-torta-option h2 {
+
+        font-size: 1.5rem;
+    }
+
+    .crear-torta-option p {
+
+        font-size: 0.82rem;
+    }
+
+    .crear-torta-option .arrow {
+
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}

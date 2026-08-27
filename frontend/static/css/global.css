@@ -1,0 +1,193 @@
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --rosa-fondo: #fce1e8;
+    --rosa-claro: #f8e2e8;
+    --rosa: #dfa6b7;
+    --rosa-oscuro: #c77b91;
+
+    --crema: #fff9f5;
+    --texto: #59464b;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   ESTILO GENERAL
+========================= */
+
+html {
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+
+    background-color: var(--rosa-fondo);
+
+    /* Fondo de cuadraditos */
+    background-image:
+        linear-gradient(
+            45deg,
+            rgba(255, 249, 245, 0.75) 25%,
+            transparent 25%,
+            transparent 75%,
+            rgba(255, 249, 245, 0.75) 75%
+        ),
+        linear-gradient(
+            45deg,
+            rgba(255, 249, 245, 0.75) 25%,
+            transparent 25%,
+            transparent 75%,
+            rgba(255, 249, 245, 0.75) 75%
+        );
+
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    width: 100%;
+    margin-top: 80px;
+
+    padding: 40px 30px 20px;
+
+    background: rgba(255, 249, 245, 0.75);
+
+    border-top: 1px solid rgba(199, 123, 145, 0.15);
+
+    color: var(--texto);
+}
+
+
+/* CONTENIDO */
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 40px;
+}
+
+
+/* MARCA */
+
+.footer-brand h3 {
+    font-family: Georgia, serif;
+
+    font-size: 1.8rem;
+    font-weight: normal;
+
+    margin-bottom: 5px;
+}
+
+.footer-brand p {
+    font-size: 0.85rem;
+    opacity: 0.65;
+}
+
+
+/* INFORMACIÓN */
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 8px;
+}
+
+.footer-info a,
+.footer-info p {
+    color: var(--texto);
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    margin: 0;
+}
+
+.footer-info a {
+    transition: color 0.3s ease;
+}
+
+.footer-info a:hover {
+    color: var(--rosa-oscuro);
+}
+
+
+/* PARTE INFERIOR */
+
+.footer-bottom {
+    max-width: 1000px;
+
+    margin: 30px auto 0;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(199, 123, 145, 0.12);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.75rem;
+    opacity: 0.55;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .footer {
+        margin-top: 60px;
+        padding: 35px 20px 18px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 25px;
+    }
+
+    .footer-info {
+        align-items: center;
+    }
+
+    .footer-brand h3 {
+        font-size: 1.6rem;
+    }
+
+}
