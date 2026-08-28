@@ -336,44 +336,83 @@
 }
 
 
-/* 18 cm */
+/* =========================
+   TAMAÑOS DE LA TORTA
+========================= */
+
+.cake.size-18 {
+    width: 260px;
+}
 
 .cake.size-18 .cake-layer {
-    width: 240px;
+    width: 100%;
 }
 
 .cake.size-18 .cake-base {
-    width: 260px;
+    width: 100%;
 }
 
 
-/* 22 cm */
-
-.cake.size-22 .cake-layer {
-    width: 290px;
-}
-
-.cake.size-22 .cake-base {
+.cake.size-22 {
     width: 310px;
 }
 
+.cake.size-22 .cake-layer {
+    width: 100%;
+}
 
+.cake.size-22 .cake-base {
+    width: 100%;
+}
+
+/* =========================
+   BASE
+========================= */
+
+.cake-base {
+    width: 100%;
+    height: 18px;
+    background: #c88b5b;
+    border-radius: 0 0 15px 15px;
+}
 /* =========================
    CAPAS
 ========================= */
-
 .cake-layer {
-    width: 260px;
-
     position: relative;
+    width: 100%;
+    height: 55px;
+
+    margin: 0;
+    padding: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    overflow: hidden;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
     transition:
-        transform 0.7s cubic-bezier(.2,.8,.2,1),
-        box-shadow 0.3s ease;
+        transform 0.7s cubic-bezier(.2,.8,.2,1);
+        /*box-shadow 0.3s ease;*/
+}
+
+.cake-layer img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    /*border: none;*/
+
+    margin: 0;
+    padding: 0;
+
+   /* background: transparent;*/
 }
 
 
@@ -382,32 +421,67 @@
 ========================= */
 
 .cake-sponge {
+    width: 100%;
     height: 55px;
-
-    background: #d9a06f;
-
-    border: 4px solid #c88b5b;
-
-    box-shadow:
-        inset 0 -8px 0 rgba(120, 70, 35, 0.12),
-        0 5px 10px rgba(89, 70, 75, 0.08);
 }
+
+
+/* Imagen del bizcochuelo */
+/*
+.cake-sponge img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+}*/
 
 
 /* =========================
    RELLENOS
 ========================= */
-
 .cake-filling {
-    height: 35px;
+    width: 100%;
+    height: 42px;
 
-    background: #fff1d6;
+   /* position: relative;
+    overflow: hidden;*/
 
-    border-left: 4px solid #e5c99b;
-    border-right: 4px solid #e5c99b;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
 
-    box-shadow:
-        0 4px 8px rgba(89, 70, 75, 0.06);
+.cake-filling img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    /*border: none;*/
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Efecto suave en los bordes */
+.cake-filling::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background: linear-gradient(
+        to right,
+        rgba(255,255,255,0.05),
+        transparent 10%,
+        transparent 90%,
+        rgba(255,255,255,0.05)
+    );
 }
 
 /* =========================
@@ -798,51 +872,6 @@
 
 
 
-/* =========================
-   COLORES DE RELLENOS
-========================= */
-
-.filling-dulce-merengue-crema {
-    background: #e8b47d;
-}
-
-.filling-dulce-crema-durazno {
-    background: #f5f586;
-}
-
-.filling-dulce-crema-oreo {
-    background: #d6c3bb;
-}
-
-.filling-dulce-frutilla-crema-merengue {
-    background: #e7a4b2;
-}
-
-.filling-dulce-frutilla-crema {
-    background: #e5a6af;
-}
-
-.filling-crema-durazno {
-    background: #f6cda8;
-}
-
-.filling-crema-frutilla {
-    background: #efb2bd;
-}
-
-/* =========================
-   BASE
-========================= */
-
-.cake-base {
-    width: 280px;
-    height: 18px;
-
-    background: #c88b5b;
-
-    border-radius: 0 0 15px 15px;
-}
-
 
 /* =========================
    TEXTO DE CAPAS
@@ -936,33 +965,23 @@
 ========================= */
 
 .cake-button {
-    border: none;
-
-    padding: 15px 30px;
-
+    margin-top: 10px;
+    padding: 12px 24px;
+    border: 1px solid var(--rosa);
     border-radius: 30px;
-
-    background: var(--rosa);
-
-    color: white;
-
-    font-size: 1rem;
-
+    background: white;
+    color: var(--texto);
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
     cursor: pointer;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .cake-button:hover {
-    background: var(--rosa-oscuro);
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 10px 20px rgba(199, 123, 145, 0.25);
+    background: var(--rosa);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(199, 123, 145, 0.2);
 }
 
 /* =========================

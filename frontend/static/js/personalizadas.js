@@ -1,7 +1,3 @@
-const cake = document.querySelector(".cake");
-const toggleCake = document.querySelector("#toggleCake");
-const sizeOptions = document.querySelectorAll(".size-option");
-
 
 // =========================
 // RELLENOS DISPONIBLES
@@ -10,41 +6,103 @@ const sizeOptions = document.querySelectorAll(".size-option");
 const fillings = [
     {
         id: "dulce-merengue-crema",
-        name: "Dulce de leche, merenguitos, crema chantilly"
+        name: "Dulce de leche, merenguitos, crema chantilly",
+        image: "../static/img/capas/capa_ddl_nerenguitos_crema.png"
     },
     {
         id: "dulce-crema-durazno",
-        name: "Dulce de leche, durazno, crema chantilly"
+        name: "Dulce de leche, durazno, crema chantilly",
+        image: "../static/img/capas/capa_ddl_crema_durazno.png"
     },
     {
         id: "dulce-crema-oreo",
-        name: "Dulce de leche, crema chantilly y oreos"
-    },
-    {
-        id: "dulce-frutilla-crema-merengue",
-        name: "Dulce de leche"
+        name: "Dulce de leche, crema chantilly y oreos",
+        image: "../static/img/capas/capa_ddl_cremaOreo.png"
     },
     {
         id: "dulce-crema",
-        name: "Dulce de leche y crema chantilly"
-    },
-    {
-        id: "crema-durazno",
-        name: "Crema chantilly, durazno"
-    },
-    {
-        id: "crema-frutilla",
-        name: "Crema oreo"
-    },
-    {
-        id: "crema-frutilla",
-        name: "Crema Chantilly"
+        name: "Dulce de leche y crema chantilly",
+        image: "../static/img/capas/capa_ddl_crema.png"
     }
 ];
 
 
 // =========================
-// CREAR OPCIONES
+// TAMAÑO DE LA TORTA
+// =========================
+
+const sizeOptions =
+    document.querySelectorAll(".size-option");
+
+const cake =
+    document.querySelector(".cake");
+
+
+sizeOptions.forEach(option => {
+
+    option.addEventListener("click", () => {
+
+        // Quitar selección anterior
+        sizeOptions.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        // Marcar el seleccionado
+        option.classList.add("active");
+
+        // Obtener tamaño
+        const size =
+            option.dataset.size;
+
+        // Cambiar clase de la torta
+        cake.classList.remove("size-18", "size-22");
+
+        cake.classList.add(`size-${size}`);
+
+    });
+
+});
+
+
+// =========================
+// VER TORTA POR DENTRO
+// =========================
+
+const toggleCake =
+    document.querySelector("#toggleCake");
+
+
+let cakeOpen = false;
+
+
+if (toggleCake && cake) {
+
+    toggleCake.addEventListener("click", () => {
+
+        cakeOpen = !cakeOpen;
+
+        cake.classList.toggle("open", cakeOpen);
+
+
+        if (cakeOpen) {
+
+            toggleCake.textContent =
+                "Ver torta completa";
+
+        } else {
+
+            toggleCake.textContent =
+                "Ver la torta por dentro";
+
+        }
+
+    });
+
+}
+
+
+// =========================
+// CREAR OPCIONES DE RELLENO
 // =========================
 
 const layerSelectors =
@@ -59,16 +117,21 @@ layerSelectors.forEach((layerSelector, index) => {
         layerSelector.querySelector(".filling-options");
 
 
-    // -------------------------
-    // RELLENOS EXISTENTES
-    // -------------------------
+    if (!optionsContainer) return;
+
+
+    // =========================
+    // RELLENOS
+    // =========================
 
     fillings.forEach(filling => {
 
         const label =
             document.createElement("label");
 
-        label.className = "filling-option";
+        label.className =
+            "filling-option";
+
 
         label.innerHTML = `
             <input
@@ -85,20 +148,55 @@ layerSelectors.forEach((layerSelector, index) => {
             </span>
         `;
 
+
         optionsContainer.appendChild(label);
+
+
+        // =========================
+        // CAMBIAR IMAGEN
+        // =========================
+
+        const radio =
+            label.querySelector("input");
+
+
+        radio.addEventListener("change", () => {
+
+            const cakeLayer =
+                document.querySelector(
+                    `.filling-layer-${layerNumber}`
+                );
+
+
+            if (!cakeLayer) return;
+
+
+            const image =
+                cakeLayer.querySelector("img");
+
+
+            if (!image) return;
+
+
+            image.src =
+                filling.image;
+
+        });
 
     });
 
 
-    // -------------------------
+    // =========================
     // OPCIÓN "OTRA"
-    // -------------------------
+    // =========================
 
     const otherLabel =
         document.createElement("label");
 
+
     otherLabel.className =
         "filling-option other-option";
+
 
     otherLabel.innerHTML = `
         <input
@@ -122,19 +220,20 @@ layerSelectors.forEach((layerSelector, index) => {
         >
     `;
 
+
     optionsContainer.appendChild(otherLabel);
 
 
-    // -------------------------
-    // ACTIVAR / DESACTIVAR
-    // CAMPO "OTRA"
-    // -------------------------
-
     const otherRadio =
-        otherLabel.querySelector("input[type='radio']");
+        otherLabel.querySelector(
+            "input[type='radio']"
+        );
+
 
     const otherInput =
-        otherLabel.querySelector(".other-filling-input");
+        otherLabel.querySelector(
+            ".other-filling-input"
+        );
 
 
     otherRadio.addEventListener("change", () => {
@@ -144,109 +243,8 @@ layerSelectors.forEach((layerSelector, index) => {
 
 
         if (otherRadio.checked) {
-
             otherInput.focus();
-
         }
-
-    });
-
-});
-
-
-// =========================
-// ABRIR / CERRAR TORTA
-// =========================
-
-toggleCake.addEventListener("click", () => {
-
-    cake.classList.toggle("open");
-
-    if (cake.classList.contains("open")) {
-
-        toggleCake.textContent = "Cerrar torta";
-
-    } else {
-
-        toggleCake.textContent =
-            "Ver la torta por dentro";
-
-    }
-
-});
-
-
-// =========================
-// CAMBIAR TAMAÑO
-// =========================
-
-sizeOptions.forEach(option => {
-
-    option.addEventListener("click", () => {
-
-        const size = option.dataset.size;
-
-        cake.classList.remove(
-            "size-18",
-            "size-22"
-        );
-
-        cake.classList.add(
-            `size-${size}`
-        );
-
-
-        sizeOptions.forEach(button => {
-            button.classList.remove("active");
-        });
-
-        option.classList.add("active");
-
-    });
-
-});
-
-
-// =========================
-// CAMBIAR RELLENOS
-// =========================
-
-const fillingOptions =
-    document.querySelectorAll(".filling-option input");
-
-
-fillingOptions.forEach(option => {
-
-    option.addEventListener("change", () => {
-
-        const layer = option.dataset.layer;
-        const filling = option.dataset.filling;
-
-        const cakeLayer =
-            document.querySelector(
-                `.filling-layer-${layer}`
-            );
-
-
-        if (!cakeLayer) return;
-
-
-        // Eliminar colores anteriores
-
-        fillings.forEach(item => {
-
-            cakeLayer.classList.remove(
-                `filling-${item.id}`
-            );
-
-        });
-
-
-        // Agregar nuevo color
-
-        cakeLayer.classList.add(
-            `filling-${filling}`
-        );
 
     });
 
@@ -261,107 +259,131 @@ const whatsappButton =
     document.querySelector("#whatsappButton");
 
 
-whatsappButton.addEventListener("click", () => {
+if (whatsappButton) {
 
-    // -------------------------
-    // TAMAÑO
-    // -------------------------
+    whatsappButton.addEventListener("click", () => {
 
-    const selectedSize =
-        document.querySelector(".size-option.active");
+        // =========================
+        // TAMAÑO
+        // =========================
 
-    const size =
-        selectedSize.dataset.size;
-
-
-    // -------------------------
-    // RELLENOS
-    // -------------------------
-
-    const fillings = [];
-
-    for (let layer = 1; layer <= 3; layer++) {
-
-        const selected =
+        const selectedSize =
             document.querySelector(
-                `input[name="filling-${layer}"]:checked`
+                ".size-option.active"
             );
 
-        if (!selected) {
+
+        if (!selectedSize) {
 
             alert(
-                `Elegí el relleno de la capa ${layer}`
+                "Elegí un tamaño de torta"
             );
 
             return;
         }
 
 
-        let fillingName =
-            selected
-                .closest(".filling-option")
-                .querySelector(".filling-name")
-                .textContent
-                .trim();
+        const size =
+            selectedSize.dataset.size;
 
 
-        // -------------------------
-        // SI ES "OTRA"
-        // -------------------------
+        // =========================
+        // RELLENOS
+        // =========================
 
-        if (selected.dataset.filling === "otra") {
-
-            const input =
-                selected
-                    .closest(".filling-option")
-                    .querySelector(".other-filling-input");
+        const selectedFillings = [];
 
 
-            if (!input.value.trim()) {
+        for (let layer = 1; layer <= 3; layer++) {
 
-                alert(
-                    `Escribí qué relleno querés en la capa ${layer}`
+            const selected =
+                document.querySelector(
+                    `input[name="filling-${layer}"]:checked`
                 );
 
-                input.focus();
+
+            if (!selected) {
+
+                alert(
+                    `Elegí el relleno de la capa ${layer}`
+                );
 
                 return;
             }
 
 
-            fillingName =
-                `Otra: ${input.value.trim()}`;
+            let fillingName =
+                selected
+                    .closest(".filling-option")
+                    .querySelector(".filling-name")
+                    .textContent
+                    .trim();
+
+
+            // =========================
+            // OTRA
+            // =========================
+
+            if (
+                selected.dataset.filling === "otra"
+            ) {
+
+                const input =
+                    selected
+                        .closest(".filling-option")
+                        .querySelector(
+                            ".other-filling-input"
+                        );
+
+
+                if (!input.value.trim()) {
+
+                    alert(
+                        `Escribí qué relleno querés en la capa ${layer}`
+                    );
+
+                    input.focus();
+
+                    return;
+                }
+
+
+                fillingName =
+                    `Otra: ${input.value.trim()}`;
+            }
+
+
+            selectedFillings.push(
+                fillingName
+            );
+
         }
 
 
-        fillings.push(fillingName);
-    }
+        // =========================
+        // MENSAJE
+        // =========================
+
+        const message = `
+Hola Elva Bakery!
+
+Quiero consultar por una torta personalizada.
+
+- Tamaño: ${size} cm
+
+- Rellenos:
+
+• Capa 1: ${selectedFillings[0]}
+• Capa 2: ${selectedFillings[1]}
+• Capa 3: ${selectedFillings[2]}
+
+¡Gracias!
+        `;
 
 
-    // -------------------------
-    // MENSAJE
-    // -------------------------
-
-    const message = `
-    Hola Elva Bakery! 
-
-    Quiero consultar por una torta personalizada.
-
-    - Tamaño: ${size} cm
-
-    - Rellenos:
-
-    • Capa 1: ${fillings[0]}
-    • Capa 2: ${fillings[1]}
-    • Capa 3: ${fillings[2]}
-
-    ¡Gracias! 
-    `;
-
-
-        // -------------------------
+        // =========================
         // WHATSAPP
-        // -------------------------
+        // =========================
 
         const phone =
             "5492616175138";
@@ -371,6 +393,12 @@ whatsappButton.addEventListener("click", () => {
             `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
 
-        window.open(url, "_blank");
+        window.open(
+            url,
+            "_blank"
+        );
 
-});
+    });
+
+}
+
