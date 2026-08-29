@@ -12,8 +12,6 @@ Quiero consultar por la siguiente torta:
 
 - ${torta}
 
-¿Podrían indicarme disponibilidad?
-
 ¡Gracias! 💕`;
 
         const phone = "5492616175138";
