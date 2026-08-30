@@ -1,7 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta http-equiv="refresh" content="0; url=/templates/index.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elva Bakery </title>
+
+    <link rel="stylesheet" href="static/css/global.css">
+    <link rel="stylesheet" href="static/css/home.css">
+
 </head>
-<body></body>
+
+<body>
+
+    <main class="home">
+
+        <header class="brand">
+            <div class="brand-name">
+                <svg viewBox="0 0 500 180">
+                    <defs>
+                        <path
+                            id="curva"
+                            d="M 70,140 Q 250,0 430,140"
+                            fill="transparent"
+                        />
+                    </defs>
+
+                    <text>
+                        <textPath href="#curva" startOffset="50%" text-anchor="middle">
+                            Elva Bakery 
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+
+            <div class="logo-container">
+                <img src="static/img/home/logo.png" alt="Elva Bakery">
+            </div>
+        </header>
+
+
+        <nav class="categories">
+
+            <a href="tortas.html" class="category-button">
+                <span>Tortas</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <a href="tartas.html" class="category-button">
+                <span>Tartas</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <a href="personalizadas.html" class="category-button">
+                <span>Personalizadas</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <a href="bombones.html" class="category-button">
+                <span>Otros</span>
+                <span class="arrow">→</span>
+            </a>
+
+        </nav>
+
+        <section class="about-me">
+
+            <div class="about-image">
+                <img src="static/img/home/trini-elva.jpeg" alt="Trinidad - Elva Bakery">
+            </div>
+
+            <div class="about-content">
+
+                <span class="about-small-title">
+                    UN POQUITO DE MÍ
+                </span>
+
+                <h2>Hola, soy Trinidad ♡</h2>
+
+                <p>
+                    Y ella es elva, la dueña de todos mis proyectos.
+                </p>
+
+                <p>
+                    Despues de muchos años de querer empezar mi propio emprendimiento
+                    de pasteleria, me anime, espero que cuando las pruebes las 
+                    disfrutes tanto como yo!
+                </p>
+
+                <p class="about-signature">
+                    Gracias por estar acá ✨
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="static/js/home.js"></script>
+    <script src="static/js/app.js"></script>
+    <script src="static/js/footer.js"></script>
+</body>
 </html>
