@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,110 +31,55 @@
         </header>
 
 
-        <section class="tortas-grid">
+        <!-- =========================
+             CARRUSEL DE TORTAS
+        ========================== -->
 
-            <article class="torta-card">
+        <section class="tortas-carousel">
 
-                <div class="torta-image">
-                    <img src="static/img/personalizadas/letraE.jpeg"
-                         alt="Torta de chocolate">
+            <button class="carousel-button carousel-prev" id="prevTorta">
+                ‹
+            </button>
+
+            <div class="carousel-slide">
+
+                <div class="carousel-image">
+                    <img id="carouselImagen"
+                        src="static/img/personalizadas/letraE.jpeg"
+                        alt="Letter Cake - Letra E">
                 </div>
 
-                <div class="torta-info">
-                    <h2>Letter Cake - Letra E</h2>
-                    <p>Chocolinas, dulce de leche y crema + 
-                        Deco de corazones rosados y blancos hechos con chocolate blanco</p>
-                   <!-- <span class="price">$45.000</span> -->
-                </div>
+                <div class="carousel-info">
 
-            </article>
+                    <h2 id="carouselTitulo">
+                        Letter Cake - Letra E
+                    </h2>
 
-
-            <article class="torta-card">
-
-                <div class="torta-image">
-                    <img src="static/img/personalizadas/letraT.jpeg"
-                         alt="Torta Oreo">
-                </div>
-
-                <div class="torta-info">
-                    <h2>Letter Cake - Letra T</h2>
-                    <p>Chocolinas, dulce de leche y crema + 
-                        Deco de patitos rosados y celestes hechos con chocolate blanco y mucho amor para un baby shower</p>
-                    <!--<span class="price">$45.000</span>-->
-                </div>
-
-            </article>
-
-
-            <article class="torta-card">
-
-                <div class="torta-image">
-                    <img src="static/img/personalizadas/personalizadaCorazones.jpeg"
-                         alt="Torta corazones">
-                </div>
-
-                <div class="torta-info">
-                    <h2>Torta Corazones</h2>
-                    <p>Torta de bizcochuelo rellena con dulce de leche, 
-                        crema chantilly y merenguitos, pedido especial para una cumpleañera</p>
-                    <!--<span class="price">$43.500</span>-->
-                </div>
-
-            </article>
-
-
-            <article class="torta-card">
-
-                <div class="torta-image">
-                    <img src="static/img/personalizadas/persoOso.jpeg"
-                         alt="Torta Oso">
-                </div>
-
-                <div class="torta-info">
-                    <h2>Torta Oso</h2>
-                    <p>Torta de bizcochuelo rellena con dulce de leche, 
-                        crema chantilly y merenguitos, pedido especial para una cumpleañera</p>
-                    <!--<span class="price">$35.000</span>-->
-                </div>
-
-            </article>
-
-            <article class="torta-card">
-
-                <div class="torta-image">
-                    <img src="static/img/personalizadas/letraM_brownie.jpeg"
-                         alt="Letra M">
-                </div>
-
-                <div class="torta-info">
-                    <h2>Letter Cake - Letra M</h2>
-                    <p>Brownie, mucho dulce de leche, crema chantilly y deco para un cumpleaños de 30</p>
-                    <!--<span class="price">$35.000</span>-->
-                </div>
-
-            </article>
-
-            <article class="torta-card">
-
-                <div class="torta-image">
-                    <img src="static/img/personalizadas/rogelMetro.jpeg"
-                         alt="Letra M">
-                </div>
-
-                <div class="torta-info">
-                    <h2>Rogel de 1 metros</h2>
-                    <p>Pedido especial para una fiesta de cumpleaños, rogel de 1 metro de largo
-                        con mas de 5 kg de dulce de leche y mucho merengue!!
+                    <p id="carouselDescripcion">
+                        Chocolinas, dulce de leche y crema +
+                        Deco de corazones rosados y blancos hechos
+                        con chocolate blanco
                     </p>
-                    <!--<span class="price">$35.000</span>-->
+
                 </div>
 
-            </article>
+            </div>
+
+            <button class="carousel-button carousel-next" id="nextTorta">
+                ›
+            </button>
 
         </section>
 
+<div class="carousel-indicators" id="carouselIndicators"></div>
+        <!-- INDICADORES -->
+
+        <div class="carousel-indicators" id="carouselIndicators">
+        </div>
+
+
     </main>
+
 
     <script src="static/js/tortas.js"></script>
     <script src="static/js/footer.js"></script>
@@ -141,3 +87,4 @@
 </body>
 
 </html>
+

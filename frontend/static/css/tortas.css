@@ -209,6 +209,260 @@
     box-shadow: none;
 }
 
+/* =========================
+   CARRUSEL DE TORTAS
+   ========================= */
+
+.tortas-carousel {
+    width: 100%;
+    max-width: 1100px;
+    margin: 50px auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+/* CONTENEDOR DE LA TORTA */
+
+.carousel-slide {
+    width: 850px;
+
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    background: var(--crema);
+
+    border-radius: 30px;
+
+    padding: 30px;
+
+    box-shadow: 0 10px 30px rgba(89, 70, 75, 0.10);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* ANIMACIÓN */
+
+.carousel-slide.changing {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+
+/* =========================
+   IMAGEN
+   ========================= */
+
+.carousel-image {
+    width: 430px;
+    height: 430px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: white;
+}
+
+
+.carousel-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+.carousel-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   INFORMACIÓN
+   ========================= */
+
+.carousel-info {
+    flex: 1;
+}
+
+
+.carousel-info h2 {
+    margin: 0 0 18px;
+
+    color: var(--rosa-oscuro);
+
+    font-size: 2rem;
+}
+
+
+.carousel-info p {
+    margin: 0;
+
+    color: var(--texto);
+
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   BOTONES
+   ========================= */
+
+.carousel-button {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--rosa);
+
+    color: white;
+
+    font-size: 2.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.carousel-button:hover {
+    transform: scale(1.1);
+    background: var(--rosa-oscuro);
+}
+
+
+/* =========================
+   INDICADORES
+   ========================= */
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 20px;
+}
+
+
+.carousel-indicators .indicator {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--rosa-claro);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.carousel-indicators .indicator.active {
+    background: var(--rosa-oscuro);
+
+    transform: scale(1.4);
+}
+
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .tortas-carousel {
+        margin-top: 30px;
+
+        gap: 6px;
+
+        padding: 0 5px;
+    }
+
+
+    .carousel-slide {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding: 15px;
+
+        border-radius: 25px;
+    }
+
+
+    .carousel-image {
+        width: 100%;
+        height: 320px;
+
+        border-radius: 20px;
+    }
+
+
+    .carousel-info {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 0 5px 10px;
+    }
+
+
+    .carousel-info h2 {
+        font-size: 1.4rem;
+
+        margin-bottom: 10px;
+    }
+
+
+    .carousel-info p {
+        font-size: 0.92rem;
+
+        line-height: 1.55;
+    }
+
+
+    .carousel-button {
+        width: 38px;
+        height: 38px;
+
+        font-size: 1.8rem;
+    }
+
+}
+
 
 /* =========================
    CELULAR
