@@ -8,7 +8,7 @@ whatsappButtons.forEach(button => {
 
         const message = `Hola Elva Bakery!
 
-Quiero consultar por la siguiente torta:
+Quiero consultar por:
 
 - ${torta}
 
