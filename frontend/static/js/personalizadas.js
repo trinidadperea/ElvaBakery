@@ -7,22 +7,22 @@ const fillings = [
     {
         id: "dulce-merengue-crema",
         name: "Dulce de leche, merenguitos, crema chantilly",
-        image: "../static/img/capas/capa_ddl_nerenguitos_crema.png"
+        image: "static/img/capas/capa_ddl_nerenguitos_crema.png"
     },
     {
         id: "dulce-crema-durazno",
         name: "Dulce de leche, durazno, crema chantilly",
-        image: "../static/img/capas/capa_ddl_crema_durazno.png"
+        image: "static/img/capas/capa_ddl_crema_durazno.png"
     },
     {
         id: "dulce-crema-oreo",
         name: "Dulce de leche, crema chantilly y oreos",
-        image: "../static/img/capas/capa_ddl_cremaOreo.png"
+        image: "static/img/capas/capa_ddl_cremaOreo.png"
     },
     {
         id: "dulce-crema",
         name: "Dulce de leche y crema chantilly",
-        image: "../static/img/capas/capa_ddl_crema.png"
+        image: "static/img/capas/capa_ddl_crema.png"
     }
 ];
 
