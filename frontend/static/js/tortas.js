@@ -63,6 +63,11 @@ const tortasCarousel = [
         imagen: "static/img/personalizadas/rogelMetro.jpeg",
         titulo: "Rogel de 1 metro",
         descripcion: "Pedido especial para una fiesta de cumpleaños, rogel de 1 metro de largo con más de 5 kg de dulce de leche y mucho merengue!!"
+    },
+    {
+        imagen: "static/img/personalizadas/letterG.jpeg",
+        titulo: "Letter Cake - Letra G",
+        descripcion: "Chocotorta en forma de letra G, con una deco colorida, oreos bañadas, kitkat, rocklets y muchos chocolates!!"
     }
 
 ];
