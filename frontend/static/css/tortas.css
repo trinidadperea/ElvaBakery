@@ -127,6 +127,10 @@
     transform: scale(1.08);
 }
 
+.torta-card .torta-image img {
+    cursor: pointer;
+}
+
 
 /* =========================
    INFORMACIÓN
@@ -394,6 +398,93 @@
     transform: scale(1.4);
 }
 
+/* =========================
+   IMAGEN AMPLIADA
+========================= */
+
+.carousel-image img {
+    cursor: pointer;
+}
+
+/* Fondo oscuro */
+.image-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease;
+    
+    z-index: 9999;
+}
+
+/* Cuando está abierto */
+.image-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Imagen grande */
+.image-modal img {
+    max-width: 90vw;
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+/* Animación de entrada */
+.image-modal.active img {
+    transform: scale(1);
+}
+
+/* Botón X */
+.image-modal-close {
+    position: fixed;
+    z-index: 10001;
+
+    top: 20px;
+    right: 30px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--rosa);
+    color: white;
+
+    font-size: 2rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.2s ease,
+                background 0.2s ease;
+}
+
+.image-modal-close:hover {
+    transform: scale(1.1);
+    background: var(--rosa-oscuro);
+}
+
 
 /* =========================
    CELULAR
@@ -514,5 +605,24 @@
 
     .price {
         font-size: 0.85rem;
+    }
+        .image-modal {
+        padding: 15px;
+    }
+
+    .image-modal img {
+        max-width: 95vw;
+        max-height: 85vh;
+        border-radius: 15px;
+    }
+
+    .image-modal-close {
+        top: 15px;
+        right: 15px;
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 1.7rem;
     }
 }
