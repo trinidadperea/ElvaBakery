@@ -40,7 +40,21 @@ const tortasCarousel = [
         imagen: "static/img/personalizadas/letterG.jpeg",
         titulo: "Letter Cake - Letra G",
         descripcion: "Chocotorta en forma de letra G, con una deco colorida, oreos bañadas, kitkat, rocklets y muchos chocolates!!"
+    },
+
+    {
+        imagen: "static/img/personalizadas/30.jpeg",
+        titulo: "Number Cake - 30",
+        descripcion: "Brownie, dulce de leche, crema chantilly y muchas frutillas para un festejo muy especial de 30 años"
+    },
+
+    {
+        imagen: "static/img/personalizadas/corazones.jpeg",
+        titulo: "Torta rústica con corazones",
+        descripcion: "Torta a pedido para un cumpleaños, con 3 rellenos distintos: - crema chantilly, dulce de leche y merenguitos - crema chantilly y frutillas - dulce de leche con nueces"
     }
+
+
 
 ];
 
