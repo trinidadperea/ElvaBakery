@@ -52,6 +52,12 @@ const tortasCarousel = [
         imagen: "static/img/personalizadas/corazones.jpeg",
         titulo: "Torta rústica con corazones",
         descripcion: "Torta a pedido para un cumpleaños, con 3 rellenos distintos: - crema chantilly, dulce de leche y merenguitos - crema chantilly y frutillas - dulce de leche con nueces"
+    },
+
+    {
+        imagen: "static/img/personalizadas/perso29.jpeg",
+        titulo: "Cumpleaños de 29",
+        descripcion: "Torta especializada, con 3 rellenos distintos: - crema chantilly y durazno - dulce de leche - crema chantilly y frutillas"
     }
 
 
