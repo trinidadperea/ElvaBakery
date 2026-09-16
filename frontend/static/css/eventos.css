@@ -47,7 +47,7 @@
 .back-button {
     position: absolute;
     left: 0;
-    top: 5px;
+    top: -15px;
 
     color: var(--texto);
     text-decoration: none;
