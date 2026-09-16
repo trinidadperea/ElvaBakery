@@ -1,0 +1,268 @@
+/* =========================
+   EVENTOS
+========================= */
+
+.eventos-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 60px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.eventos-header {
+
+    width: min(900px, 100%);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 1;
+
+    animation: aparecer 0.8s ease;
+
+}
+
+
+/* =========================
+   BOTÓN INICIO
+========================= */
+
+.back-button {
+    position: absolute;
+    left: 0;
+    top: 5px;
+
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 0.95rem;
+
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: var(--rosa-oscuro);
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.eventos-header h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: 3rem;
+
+    font-weight: normal;
+
+    color: var(--texto);
+
+    margin: 0 0 15px;
+
+}
+
+
+/* =========================
+   DESCRIPCIÓN
+========================= */
+
+.eventos-header p {
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+    opacity: 0.75;
+
+    margin: 0;
+
+    color: var(--texto);
+
+}
+
+.eventos-header p a {
+
+    color: var(--rosa-oscuro);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: color 0.3s ease;
+
+}
+
+.eventos-header p a:hover {
+
+    color: var(--rosa);
+
+}
+
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+.eventos-page .categories {
+
+    width: min(900px, 100%);
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin-top: 70px;
+
+    position: relative;
+
+    z-index: 1;
+
+    animation: aparecer 1s ease 0.2s both;
+
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.eventos-page .category-button {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 22px 28px;
+
+    background: rgba(255, 249, 245, 0.75);
+
+    border: 1px solid rgba(199, 123, 145, 0.2);
+
+    border-radius: 18px;
+
+    color: var(--texto);
+
+    text-decoration: none;
+
+    font-size: 1.1rem;
+
+    letter-spacing: 0.5px;
+
+    transition:
+
+        transform 0.3s ease,
+
+        background 0.3s ease,
+
+        box-shadow 0.3s ease,
+
+        color 0.3s ease;
+
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.eventos-page .category-button:hover {
+
+    transform: translateY(-6px);
+
+    background: var(--rosa);
+
+    color: white;
+
+    box-shadow: 0 15px 30px rgba(199, 123, 145, 0.25);
+
+}
+
+
+/* =========================
+   FLECHA
+========================= */
+
+.eventos-page .arrow {
+
+    font-size: 1.4rem;
+
+    opacity: 0;
+
+    transform: translateX(-10px);
+
+    transition:
+
+        opacity 0.3s ease,
+
+        transform 0.3s ease;
+
+}
+
+.eventos-page .category-button:hover .arrow {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .eventos-page {
+
+        padding: 45px 20px;
+
+    }
+
+    .eventos-header h1 {
+
+        font-size: 2.5rem;
+
+    }
+
+    .eventos-page .categories {
+
+        grid-template-columns: 1fr;
+
+        margin-top: 50px;
+
+        gap: 14px;
+
+    }
+
+    .eventos-page .category-button {
+
+        padding: 20px 22px;
+
+    }
+
+}

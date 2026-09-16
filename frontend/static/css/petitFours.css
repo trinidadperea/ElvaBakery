@@ -1,0 +1,265 @@
+/* =========================
+   CARD BANDEJAS
+========================= */
+
+.trays-card {
+
+    width: min(900px, 100%);
+
+    box-sizing: border-box;
+
+    margin-top: 35px;
+
+    padding: 45px 40px;
+
+    background: var(--rosa);
+
+    border: 1px solid rgba(199, 123, 145, 0.2);
+
+    border-radius: 30px;
+
+    box-shadow: 0 15px 40px rgba(89, 70, 75, 0.10);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 1;
+
+    animation: aparecer 1s ease 0.4s both;
+
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.trays-small-title {
+
+    font-size: 0.7rem;
+
+    letter-spacing: 3px;
+
+    color: white;
+
+    font-weight: bold;
+
+}
+
+
+.trays-card h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 2.5rem;
+
+    font-weight: normal;
+
+    color: white;
+
+    margin: 10px 0 15px;
+
+}
+
+
+.trays-card > .trays-content > p {
+
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+    color: white;
+
+    opacity: 0.9;
+
+}
+
+
+/* =========================
+   OPCIONES
+========================= */
+
+.tray-options {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+/* =========================
+   CADA BANDEJA
+========================= */
+
+.tray-option {
+
+    padding: 30px 25px;
+
+    background: rgba(255, 249, 245, 0.9);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    box-sizing: border-box;
+
+}
+
+
+.tray-option h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 1.7rem;
+
+    font-weight: normal;
+
+    color: var(--texto);
+
+    margin: 0 0 8px;
+
+}
+
+
+.tray-units {
+
+    font-size: 0.85rem;
+
+    color: var(--texto);
+
+    opacity: 0.65;
+
+    margin-bottom: 15px;
+
+}
+
+
+.tray-price {
+
+    font-family: Georgia, serif;
+
+    font-size: 1.6rem;
+
+    font-weight: bold;
+
+    color: var(--rosa-oscuro);
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+.tray-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 12px 22px;
+
+    background: var(--rosa);
+
+    color: white;
+
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    transition:
+
+        transform 0.3s ease,
+
+        background 0.3s ease,
+
+        box-shadow 0.3s ease;
+
+}
+
+
+.tray-button:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--rosa-oscuro);
+
+    box-shadow: 0 8px 20px rgba(89, 70, 75, 0.15);
+
+}
+
+
+.tray-button span {
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.tray-button:hover span {
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .trays-card {
+
+        padding: 35px 20px;
+
+        border-radius: 24px;
+
+    }
+
+
+    .trays-card h2 {
+
+        font-size: 2rem;
+
+    }
+
+
+    .tray-options {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+    }
+
+
+    .tray-option {
+
+        padding: 25px 20px;
+
+    }
+
+}
