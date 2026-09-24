@@ -1,6 +1,12 @@
 const tortasCarousel = [
 
     {
+        video: "static/img/personalizadas/videos/tortaOceano.mp4",
+        titulo: "Torta Oceano",
+        descripcion: "Personalizada para un cumpleaños de 4 años, rellena de dulce de leche, crema y frutillas."
+    },
+
+    {
         imagen: "static/img/personalizadas/letraE.jpeg",
         titulo: "Letter Cake - Letra E",
         descripcion: "Chocolinas, dulce de leche y crema + Deco de corazones rosados y blancos hechos con chocolate blanco"
@@ -68,6 +74,8 @@ const tortasCarousel = [
 let indiceCarousel = 0;
 
 const carouselImagen = document.getElementById("carouselImagen");
+const carouselVideo = document.getElementById("carouselVideo");
+const carouselVideoSource = document.getElementById("carouselVideoSource");
 const carouselTitulo = document.getElementById("carouselTitulo");
 const carouselDescripcion = document.getElementById("carouselDescripcion");
 const carouselSlide = document.querySelector(".carousel-slide");
@@ -143,8 +151,26 @@ function mostrarTortaCarousel(indice) {
 
     setTimeout(() => {
 
-        carouselImagen.src = torta.imagen;
-        carouselImagen.alt = torta.titulo;
+        if (torta.video) {
+
+            // Mostrar video
+            carouselImagen.style.display = "none";
+            carouselVideo.style.display = "block";
+
+            carouselVideoSource.src = torta.video;
+            carouselVideo.load();
+
+        } else {
+
+            // Mostrar imagen
+            carouselVideo.pause();
+            carouselVideo.style.display = "none";
+
+            carouselImagen.style.display = "block";
+            carouselImagen.src = torta.imagen;
+            carouselImagen.alt = torta.titulo;
+
+        }
 
         carouselTitulo.textContent = torta.titulo;
         carouselDescripcion.textContent = torta.descripcion;
