@@ -70,7 +70,14 @@ const tortasCarousel = [
         imagen: "static/img/personalizadas/torta80.jpeg",
         titulo: "Cumpleaños de 80",
         descripcion: "Torta especializada, con 3 rellenos: - dulce de leche - crema chantilly y frutillas - dulce de leche"
+    },
+
+    {
+        imagen: "static/img/personalizadas/persoRosaCoras.jpeg",
+        titulo: "Cumpleaños de 27",
+        descripcion: "Torta especializada, con 3 rellenos: - dulce de leche - crema chantilly y oreos - dulce de leche y frutillas"
     }
+
 
 
 
