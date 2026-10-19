@@ -1,0 +1,459 @@
+/* =========================
+   PÁGINA BOX
+========================= */
+
+.box-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 6%;
+    box-sizing: border-box;
+    background-color: var(--rosa-fondo);
+}
+
+
+
+/* =========================
+   HEADER
+========================= */
+
+.box-header {
+
+    width: min(900px, 100%);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 1;
+
+    animation: aparecer 0.8s ease;
+    
+    margin-bottom: 50px;
+
+}
+
+
+/* =========================
+   BOTÓN VOLVER
+========================= */
+
+.box-header .back-button {
+    position: absolute;
+    left: 0;
+    top: -15px;
+
+    display: block;
+    width: fit-content;
+
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 0.95rem;
+
+    margin: 0;
+    padding: 0;
+
+    transition: color 0.3s ease;
+}
+
+.box-header .back-button:hover {
+    color: var(--rosa-oscuro);
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.box-header h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: 3rem;
+
+    font-weight: normal;
+
+    color: var(--texto);
+
+    margin: 0 0 15px;
+
+}
+
+
+/* =========================
+   DESCRIPCIÓN
+========================= */
+
+.box-header p {
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+    opacity: 0.75;
+
+    margin: 0;
+
+    color: var(--texto);
+
+}
+
+
+
+
+/* =========================
+   LISTA DE BOX
+========================= */
+
+.box-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   TARJETA DE CADA BOX
+========================= */
+
+.box-item {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+
+    width: 100%;
+    max-width: 900px;
+    min-height: 300px;
+
+    overflow: hidden;
+
+    background-color: var(--crema);
+    border-radius: 18px;
+
+    box-shadow: 0 5px 18px rgba(89, 70, 75, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.box-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(89, 70, 75, 0.13);
+}
+
+
+/* =========================
+   IMAGEN A LA IZQUIERDA
+========================= */
+
+.box-image {
+    flex: 0 0 40%;
+    max-width: 40%;
+    min-height: 300px;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.box-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    cursor: zoom-in;
+
+    transition: transform 0.4s ease;
+}
+
+.box-item:hover .box-image img {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   INFORMACIÓN A LA DERECHA
+========================= */
+
+.box-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    flex: 1;
+    min-width: 0;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+}
+
+.box-info h2 {
+    margin: 0 0 15px;
+
+    color: var(--rosa-oscuro);
+
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    text-align: left;
+}
+
+.box-info p {
+    margin: 0 0 25px;
+
+    color: var(--texto);
+
+    font-size: 1rem;
+    line-height: 1.7;
+
+    text-align: left;
+}
+
+
+/* =========================
+   PRECIO
+========================= */
+
+.box-price {
+    display: block;
+    margin-top: 10px;
+
+    color: var(--rosa-oscuro);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+/* =========================
+   BOTÓN ENCARGAR
+========================= */
+
+.whatsapp-button {
+    display: block;
+
+    width: 100%;
+    max-width: 250px;
+
+    margin-top: auto;
+    padding: 12px 18px;
+
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 25px;
+
+    background: var(--rosa);
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background: var(--rosa-oscuro);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 18px rgba(199, 123, 145, 0.25);
+}
+
+.whatsapp-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+
+/* =========================
+   MODAL DE IMAGEN
+========================= */
+
+.image-modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+    box-sizing: border-box;
+
+    background: rgba(40, 25, 30, 0.88);
+}
+
+.image-modal.active {
+    display: flex;
+}
+
+.image-modal img {
+    display: block;
+
+    max-width: 90%;
+    max-height: 85vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.close-modal {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 2.5rem;
+    line-height: 1;
+
+    cursor: pointer;
+    z-index: 10000;
+
+    transition: transform 0.2s ease;
+}
+
+.close-modal:hover {
+    transform: scale(1.15);
+}
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 768px) {
+
+    .shots-page {
+        padding: 30px 5%;
+    }
+
+    .shots-header {
+        margin-bottom: 30px;
+    }
+
+    .shots-header h1 {
+        font-size: 2.3rem;
+    }
+
+    .shots-list {
+        gap: 25px;
+    }
+
+    .shot-item {
+        min-height: 260px;
+    }
+
+    .shot-image {
+        flex-basis: 40%;
+        max-width: 40%;
+        min-height: 260px;
+    }
+
+    .shot-info {
+        padding: 22px;
+    }
+
+    .shot-info h2 {
+        font-size: 1.4rem;
+    }
+
+    .shot-info p {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 520px) {
+
+    .shots-page {
+        padding: 25px 16px;
+    }
+
+    .shots-header h1 {
+        font-size: 2rem;
+    }
+
+    .shots-header p {
+        font-size: 0.9rem;
+    }
+
+    .shots-list {
+        gap: 22px;
+    }
+
+    .shot-item {
+        min-height: 220px;
+        border-radius: 14px;
+    }
+
+    .shot-image {
+        flex-basis: 38%;
+        max-width: 38%;
+        min-height: 220px;
+    }
+
+    .shot-info {
+        padding: 16px 13px;
+    }
+
+    .shot-info h2 {
+        margin-bottom: 10px;
+        font-size: 1.15rem;
+    }
+
+    .shot-info p {
+        margin-bottom: 18px;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .whatsapp-button {
+        max-width: 100%;
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+
+    .image-modal {
+        padding: 15px;
+    }
+
+    .image-modal img {
+        max-width: 100%;
+        max-height: 80vh;
+    }
+
+    .close-modal {
+        top: 12px;
+        right: 18px;
+    }
+}
