@@ -1,0 +1,173 @@
+/* =========================
+   PÁGINA DE PERSONALIZADAS
+========================= */
+
+.personalizadas-page {
+    min-height: 100vh;
+    padding: 60px 20px 80px;
+    position: relative;
+    box-sizing: border-box;
+    color: var(--texto);
+}
+
+/* HEADER */
+
+.personalizadas-header {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.personalizadas-header h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.personalizadas-header p {
+    font-size: 1rem;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+/* BOTÓN VOLVER */
+
+.back-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+}
+
+.back-button:hover {
+    color: var(--rosa-oscuro);
+    transform: translateX(-4px);
+}
+
+/* OPCIONES */
+
+.personalizadas-options {
+    width: min(850px, 100%);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* TARJETAS */
+
+.personalizada-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    padding: 35px 40px;
+
+    background: rgba(255, 249, 245, 0.65);
+    border: 1px solid rgba(199, 123, 145, 0.2);
+    border-radius: 25px;
+
+    color: var(--texto);
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.personalizada-option:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 249, 245, 0.9);
+    border-color: var(--rosa);
+    box-shadow: 0 12px 30px rgba(89, 70, 75, 0.07);
+}
+
+/* TEXTO DE LAS TARJETAS */
+
+.option-content {
+    flex: 1;
+}
+
+.option-content h2 {
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin: 0 0 12px;
+}
+
+.option-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    opacity: 0.75;
+    margin: 0;
+    max-width: 550px;
+}
+
+/* FLECHA */
+
+.arrow {
+    font-size: 1.8rem;
+    color: var(--rosa-oscuro);
+    transition: transform 0.3s ease;
+}
+
+.personalizada-option:hover .arrow {
+    transform: translateX(6px);
+}
+
+/* MÓVILES */
+
+@media (max-width: 600px) {
+
+    .personalizadas-page {
+        padding: 75px 18px 45px;
+    }
+
+    .personalizadas-header {
+        margin-bottom: 35px;
+    }
+
+    .personalizadas-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .personalizadas-header p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .back-button {
+        top: 22px;
+        left: 18px;
+        font-size: 0.85rem;
+    }
+
+    .personalizadas-options {
+        gap: 16px;
+    }
+
+    .personalizada-option {
+        padding: 25px 22px;
+        border-radius: 20px;
+        gap: 15px;
+    }
+
+    .option-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .option-content p {
+        font-size: 0.85rem;
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+    }
+}

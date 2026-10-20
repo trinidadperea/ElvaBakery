@@ -6,6 +6,8 @@
     min-height: 100vh;
     padding: 60px 20px 80px;
     position: relative;
+    box-sizing: border-box;
+    color: var(--texto);
 }
 
 
@@ -15,16 +17,13 @@
 
 .personalizadas-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 45px;
 }
 
 .personalizadas-header h1 {
     font-family: Georgia, serif;
-
-    font-size: clamp(2.8rem, 6vw, 5rem);
-
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: normal;
-
     margin-bottom: 12px;
 }
 
@@ -34,6 +33,7 @@
     letter-spacing: 1px;
 }
 
+
 /* =========================
    VOLVER
 ========================= */
@@ -42,16 +42,10 @@
     position: absolute;
     top: 30px;
     left: 30px;
-
     color: var(--texto);
     text-decoration: none;
-
     font-size: 0.95rem;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-
+    transition: color 0.3s ease, transform 0.3s ease;
     z-index: 2;
 }
 
@@ -60,967 +54,484 @@
     transform: translateX(-4px);
 }
 
-/* =========================
-   OPCIONES
-========================= */
-
-.personalizadas-options {
-
-    width: min(900px, 100%);
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
-}
-
-
-/* =========================
-   OPCIÓN
-========================= */
-
-.personalizada-option {
-
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    min-height: 180px;
-
-    padding: 30px;
-
-    background: rgba(255, 249, 245, 0.75);
-
-    border: 1px solid rgba(199, 123, 145, 0.2);
-
-    border-radius: 22px;
-
-    color: var(--texto);
-
-    text-decoration: none;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease,
-        color 0.3s ease;
-}
-
-
-/* =========================
-   HOVER
-========================= */
-
-.personalizada-option:hover {
-
-    transform: translateY(-6px);
-
-    background: var(--rosa);
-
-    color: white;
-
-    box-shadow:
-        0 15px 30px rgba(199, 123, 145, 0.25);
-}
-
-
-/* =========================
-   TEXTO
-========================= */
-
-.option-content {
-    max-width: 600px;
-}
-
-.personalizada-option h2 {
-
-    font-family: Georgia, serif;
-
-    font-size: 1.8rem;
-
-    font-weight: normal;
-
-    margin-bottom: 10px;
-}
-
-.personalizada-option p {
-
-    font-size: 0.9rem;
-
-    line-height: 1.5;
-
-    opacity: 0.7;
-}
-
-.personalizada-option:hover p {
-    opacity: 0.9;
-}
-
-
-/* =========================
-   FLECHA
-========================= */
-
-.personalizada-option .arrow {
-
-    font-size: 1.8rem;
-
-    opacity: 0;
-
-    transform: translateX(-10px);
-
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
-}
-
-.personalizada-option:hover .arrow {
-
-    opacity: 1;
-
-    transform: translateX(0);
-}
-
-
-
-
-/* =========================
-   BUILDER
-========================= */
-
-.cake-builder {
-    max-width: 900px;
-    margin: 0 auto;
-
-    text-align: center;
-
-    background: rgba(255, 249, 245, 0.55);
-
-    border-radius: 30px;
-
-    padding: 50px 30px 60px;
-
-    box-shadow:
-        0 15px 40px rgba(89, 70, 75, 0.06);
-}
-
-.cake-intro h2 {
-    font-family: Georgia, serif;
-    font-size: 2rem;
-    font-weight: normal;
-    margin-bottom: 8px;
-}
-
-.cake-intro p {
-    opacity: 0.7;
-    margin-bottom: 50px;
-}
-
-/* =========================
-   TAMAÑOS
-========================= */
-
-.size-selector {
-    margin-bottom: 45px;
-}
-
-.size-selector h3 {
-    font-family: Georgia, serif;
-    font-size: 1.2rem;
-    font-weight: normal;
-    margin-bottom: 18px;
-}
-
-.size-options {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.size-option {
-    width: 180px;
-
-    padding: 16px 20px;
-
-    border: 1px solid rgba(199, 123, 145, 0.25);
-
-    border-radius: 16px;
-
-    background: rgba(255, 249, 245, 0.7);
-
-    color: var(--texto);
-
-    cursor: pointer;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.size-option strong {
-    display: block;
-
-    font-family: Georgia, serif;
-
-    font-size: 1.2rem;
-
-    font-weight: normal;
-
-    margin-bottom: 5px;
-}
-
-.size-option span {
-    display: block;
-
-    font-size: 0.75rem;
-
-    opacity: 0.65;
-}
-
-.size-option:hover {
-    transform: translateY(-3px);
-
-    border-color: var(--rosa);
-}
-
-.size-option.active {
-    background: var(--rosa);
-
-    color: white;
-
-    border-color: var(--rosa);
-
-    box-shadow:
-        0 8px 20px rgba(199, 123, 145, 0.2);
-}
-
-/* =========================
-   TORTA
-========================= */
-
-/* =========================
-   TAMAÑO VISUAL DE LA TORTA
-========================= */
-
-.cake-container {
-    height: 390px;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    margin-bottom: 20px;
-}
-
-.cake {
-    width: 300px;
-
-    position: relative;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    cursor: pointer;
-
-    transition: transform 0.5s ease;
-}
-
-
-/* =========================
-   TAMAÑOS DE LA TORTA
-========================= */
-
-.cake.size-18 {
-    width: 260px;
-}
-
-.cake.size-18 .cake-layer {
-    width: 100%;
-}
-
-.cake.size-18 .cake-base {
-    width: 100%;
-}
-
-
-.cake.size-22 {
-    width: 310px;
-}
-
-.cake.size-22 .cake-layer {
-    width: 100%;
-}
-
-.cake.size-22 .cake-base {
-    width: 100%;
-}
-
-/* =========================
-   BASE
-========================= */
-
-.cake-base {
-    width: 100%;
-    height: 18px;
-    background: #c88b5b;
-    border-radius: 0 0 15px 15px;
-}
-/* =========================
-   CAPAS
-========================= */
-.cake-layer {
-    position: relative;
-    width: 100%;
-    height: 55px;
-
-    margin: 0;
-    padding: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    background: transparent;
-    border: none;
-    box-shadow: none;
-
-    transition:
-        transform 0.7s cubic-bezier(.2,.8,.2,1);
-        /*box-shadow 0.3s ease;*/
-}
-
-.cake-layer img {
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    /*border: none;*/
-
-    margin: 0;
-    padding: 0;
-
-   /* background: transparent;*/
-}
-
-
-/* =========================
-   BIZCOCHUELO
-========================= */
-
-.cake-sponge {
-    width: 100%;
-    height: 55px;
-}
-
-
-/* Imagen del bizcochuelo */
-/*
-.cake-sponge img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    display: block;
-}*/
-
-
-/* =========================
-   RELLENOS
-========================= */
-.cake-filling {
-    width: 100%;
-    height: 42px;
-
-   /* position: relative;
-    overflow: hidden;*/
-
-    background: transparent;
-    border: none;
-    box-shadow: none;
-}
-
-.cake-filling img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    /*border: none;*/
-    margin: 0;
-    padding: 0;
-}
-
-
-/* Efecto suave en los bordes */
-.cake-filling::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    pointer-events: none;
-
-    background: linear-gradient(
-        to right,
-        rgba(255,255,255,0.05),
-        transparent 10%,
-        transparent 90%,
-        rgba(255,255,255,0.05)
-    );
-}
-
-/* =========================
-   RELLENOS
-========================= */
-
-.filling-selector {
-    max-width: 700px;
-
-    margin: 0 auto 45px;
-}
-
-.filling-selector h3 {
-    font-family: Georgia, serif;
-
-    font-size: 1.2rem;
-
-    font-weight: normal;
-
-    margin-bottom: 5px;
-}
-
-.filling-subtitle {
-    font-size: 0.85rem;
-
-    opacity: 0.65;
-
-    margin-bottom: 20px;
-}
-
-
-.filling-options {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 12px;
-}
-
-
-.filling-option {
-    padding: 16px 18px;
-
-    border-radius: 16px;
-
-    border: 1px solid rgba(199, 123, 145, 0.25);
-
-    background: rgba(255, 249, 245, 0.7);
-
-    color: var(--texto);
-
-    cursor: pointer;
-
-    text-align: left;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-.filling-option strong {
-    font-family: Arial, sans-serif;
-
-    font-size: 0.9rem;
-
-    font-weight: normal;
-
-    line-height: 1.4;
-}
-
-
-.filling-option:hover {
-    transform: translateY(-3px);
-
-    border-color: var(--rosa);
-}
-
-
-.filling-option.active {
-    background: var(--rosa);
-
-    color: white;
-
-    border-color: var(--rosa);
-
-    box-shadow:
-        0 8px 20px rgba(199, 123, 145, 0.2);
-}
 
 /* =========================
    CONSTRUCTOR
 ========================= */
 
-.cake-customizer {
-    display: grid;
-
-    grid-template-columns: 1fr 1.2fr;
-
-    gap: 60px;
-
-    max-width: 1000px;
-
+.cake-builder {
+    width: min(850px, 100%);
     margin: 0 auto;
-
-    align-items: start;
+    box-sizing: border-box;
+    text-align: center;
+    background: rgba(255, 249, 245, 0.65);
+    border: 1px solid rgba(199, 123, 145, 0.15);
+    border-radius: 30px;
+    padding: 40px 35px 45px;
+    box-shadow: 0 15px 40px rgba(89, 70, 75, 0.06);
 }
 
 
 /* =========================
-   PREVIEW TORTA
+   PROGRESO
 ========================= */
 
-.cake-preview {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    position: sticky;
-
-    top: 30px;
+.steps-progress {
+    max-width: 500px;
+    margin: 0 auto 40px;
+    text-align: center;
 }
 
+#stepIndicator {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--rosa-oscuro);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
 
-.cake-preview .cake {
-    margin-bottom: 35px;
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(199, 123, 145, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressFill {
+    width: 25%;
+    height: 100%;
+    background: var(--rosa);
+    border-radius: 20px;
+    transition: width 0.4s ease;
 }
 
 
 /* =========================
-   SELECTOR
+   PASOS
+========================= */
+
+.builder-step {
+    display: none;
+    animation: stepAppear 0.35s ease;
+}
+
+.builder-step.active {
+    display: block;
+}
+
+@keyframes stepAppear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.builder-step h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    font-weight: normal;
+    margin: 0 0 12px;
+}
+
+.builder-step > p {
+    line-height: 1.6;
+    opacity: 0.75;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   OPCIONES DE TAMAÑO
+========================= */
+
+.size-options,
+.height-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 570px;
+    margin: 30px auto;
+}
+
+.size-option,
+.height-option {
+    min-height: 125px;
+    padding: 22px 18px;
+    box-sizing: border-box;
+    border: 1px solid rgba(199, 123, 145, 0.25);
+    border-radius: 20px;
+    background: rgba(255, 249, 245, 0.8);
+    color: var(--texto);
+    cursor: pointer;
+    font-family: inherit;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.size-option strong,
+.height-option strong {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.size-option span,
+.height-option span {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.75;
+    line-height: 1.4;
+}
+
+.size-option:hover,
+.height-option:hover {
+    transform: translateY(-3px);
+    border-color: var(--rosa);
+}
+
+.size-option.active,
+.height-option.active {
+    background: var(--rosa);
+    color: white;
+    border-color: var(--rosa);
+    box-shadow: 0 8px 20px rgba(199, 123, 145, 0.2);
+}
+
+.size-option.active span,
+.height-option.active span {
+    opacity: 0.95;
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+.step-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 35px;
+}
+
+.prev-step,
+.next-step {
+    min-height: 46px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.prev-step {
+    border: 1px solid var(--rosa);
+    background: transparent;
+    color: var(--texto);
+}
+
+.prev-step:hover {
+    background: rgba(223, 166, 183, 0.15);
+    transform: translateY(-2px);
+}
+
+.next-step {
+    border: 1px solid var(--rosa);
+    background: var(--rosa);
+    color: white;
+}
+
+.next-step:hover:not(:disabled) {
+    background: var(--rosa-oscuro);
+    border-color: var(--rosa-oscuro);
+    transform: translateY(-2px);
+}
+
+.next-step:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   SELECTOR DE RELLENOS
 ========================= */
 
 .filling-selector {
     width: 100%;
-
+    max-width: 650px;
+    margin: 30px auto 0;
     text-align: left;
 }
 
-.filling-selector h3 {
-    font-family: Georgia, serif;
-
-    font-size: 1.7rem;
-
-    font-weight: normal;
-
-    margin-bottom: 5px;
-}
-
-.filling-subtitle {
-    font-size: 0.85rem;
-
-    opacity: 0.65;
-
-    margin-bottom: 25px;
-}
-
-
-/* =========================
-   CAPAS
-========================= */
-
 .layer-selector {
-    padding: 18px;
-
-    margin-bottom: 15px;
-
-    background: rgba(255, 249, 245, 0.55);
-
-    border: 1px solid rgba(199, 123, 145, 0.15);
-
+    padding: 20px;
+    margin-bottom: 16px;
+    background: rgba(255, 249, 245, 0.75);
+    border: 1px solid rgba(199, 123, 145, 0.2);
     border-radius: 18px;
-
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+    text-align: left;
 }
 
-
-.layer-selector.active {
-    border-color: var(--rosa);
-
-    box-shadow:
-        0 8px 20px rgba(199, 123, 145, 0.1);
-}
-
-
-.layer-selector h4 {
+.layer-selector h3 {
     font-family: Georgia, serif;
-
-    font-size: 1.1rem;
-
+    font-size: 1.25rem;
     font-weight: normal;
-
-    margin-bottom: 12px;
-}
-
-
-.layer-selector h4 span {
-    font-family: Arial, sans-serif;
-
-    font-size: 0.75rem;
-
-    opacity: 0.55;
-
-    margin-left: 8px;
+    margin: 0 0 14px;
 }
 
 
 /* =========================
-   CHECKLIST RELLENOS
+   OPCIONES DE RELLENO
 ========================= */
 
 .filling-options {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
 }
+
 .filling-option {
     display: flex;
     align-items: center;
-
     gap: 12px;
-
-    padding: 8px 4px;
-
-    cursor: pointer;
-
+    padding: 11px 8px;
+    border: 1px solid transparent;
+    border-radius: 12px;
     color: var(--texto);
-
+    cursor: pointer;
+    text-align: left;
     transition:
-        color 0.25s ease,
-        transform 0.25s ease;
+        background 0.25s ease,
+        border-color 0.25s ease;
 }
 
+.filling-option:hover {
+    background: rgba(223, 166, 183, 0.12);
+}
 
-/* Ocultamos el radio original */
+.filling-option.selected {
+    background: rgba(223, 166, 183, 0.2);
+    border-color: var(--rosa);
+}
 
 .filling-option input[type="radio"] {
     position: absolute;
     opacity: 0;
-    pointer-events: none;
+    width: 1px;
+    height: 1px;
 }
 
-
-/* =========================
-   CÍRCULO
-========================= */
+.filling-option input[type="radio"]:focus-visible + .check-circle {
+    outline: 2px solid var(--rosa-oscuro);
+    outline-offset: 3px;
+}
 
 .check-circle {
+    position: relative;
     width: 19px;
     height: 19px;
-
     min-width: 19px;
-
-    border-radius: 50%;
-
+    box-sizing: border-box;
     border: 1.5px solid var(--rosa);
-
+    border-radius: 50%;
     background: transparent;
-
-    position: relative;
-
-    transition:
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
 }
-
-
-/* Círculo seleccionado */
 
 .filling-option input:checked + .check-circle {
     background: var(--rosa);
-
     border-color: var(--rosa);
-
-    transform: scale(1.05);
 }
-
-
-/* Puntito interno */
 
 .filling-option input:checked + .check-circle::after {
     content: "";
-
     position: absolute;
-
     width: 7px;
     height: 7px;
-
     border-radius: 50%;
-
     background: white;
-
     top: 50%;
     left: 50%;
-
     transform: translate(-50%, -50%);
 }
 
+.filling-name {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
 /* =========================
-   OTRA OPCIÓN
-========================= */
-/* =========================
-   OPCIÓN "OTRA"
+   OTRO RELLENO
 ========================= */
 
 .other-option {
     display: grid;
-    grid-template-columns: 19px auto 1fr;
+    grid-template-columns: 19px auto minmax(100px, 1fr);
     align-items: center;
     gap: 12px;
-
-    width: 100%;
 }
 
-
-/* Círculo */
 .other-option .check-circle {
     grid-column: 1;
 }
 
-
-/* Texto "Otra:" */
 .other-option .filling-name {
     grid-column: 2;
-
     white-space: nowrap;
 }
 
-
-/* Campo para escribir */
 .other-filling-input {
     grid-column: 3;
-
     width: 100%;
     min-width: 0;
-
+    box-sizing: border-box;
+    padding: 7px 4px;
     border: none;
-    border-bottom: 1px solid rgba(199, 123, 145, 0.4);
-
+    border-bottom: 1px solid rgba(199, 123, 145, 0.45);
     background: transparent;
-
-    padding: 5px 4px;
-
-    font-family: Arial, sans-serif;
-    font-size: 0.82rem;
-
     color: var(--texto);
-
+    font-family: inherit;
+    font-size: 0.85rem;
     outline: none;
-
-    transition: border-color 0.3s ease;
 }
-
 
 .other-filling-input:focus {
-    border-bottom-color: var(--rosa);
+    border-bottom-color: var(--rosa-oscuro);
 }
 
-
 .other-filling-input:disabled {
-    opacity: 0.35;
+    opacity: 0.45;
     cursor: not-allowed;
 }
 
+
 /* =========================
-   TEXTO
+   MENSAJES
 ========================= */
 
-.filling-name {
-    font-size: 0.82rem;
-
-    line-height: 1.35;
-}
-
-
-.filling-option:hover {
-    transform: translateX(3px);
-
+.form-message {
     color: var(--rosa-oscuro);
-}
-
-
-
-
-/* =========================
-   TEXTO DE CAPAS
-========================= */
-
-.cake-layer span {
-    opacity: 0;
-
-    font-size: 0.8rem;
-
-    background: rgba(255, 249, 245, 0.9);
-
-    padding: 5px 10px;
-
-    border-radius: 20px;
-
-    transition: opacity 0.3s ease;
-}
-
-.cake-layer:hover span {
-    opacity: 1;
-}
-
-
-/* =========================
-   DECORACIÓN
-========================= */
-
-.cake-decoration {
-    font-size: 2rem;
-
-    margin-bottom: -5px;
-
-    color: var(--rosa-oscuro);
-
-    transition:
-        transform 0.6s ease;
-}
-
-/* =========================
-   TORTA ABIERTA
-========================= */
-
-.cake.open .cake-decoration {
-    transform: translateY(-55px);
-}
-
-
-.cake.open .layer-sponge-1 {
-    transform: translateY(-45px);
-}
-
-
-.cake.open .filling-layer-1 {
-    transform: translateY(-30px);
-}
-
-
-.cake.open .layer-sponge-2 {
-    transform: translateY(-15px);
-}
-
-
-.cake.open .filling-layer-2 {
-    transform: translateY(15px);
-}
-
-
-.cake.open .layer-sponge-3 {
-    transform: translateY(30px);
-}
-
-
-.cake.open .filling-layer-3 {
-    transform: translateY(45px);
-}
-
-
-.cake.open .layer-sponge-4 {
-    transform: translateY(60px);
-}
-
-
-.cake.open .cake-base {
-    transform: translateY(65px);
-}
-
-
-/* =========================
-   BOTÓN
-========================= */
-
-.cake-button {
-    margin-top: 10px;
-    padding: 12px 24px;
-    border: 1px solid var(--rosa);
-    border-radius: 30px;
-    background: white;
-    color: var(--texto);
-    font-family: Arial, sans-serif;
     font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    margin: 15px 0 0;
 }
 
-.cake-button:hover {
-    background: var(--rosa);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(199, 123, 145, 0.2);
-}
 
 /* =========================
-   PEDIDO WHATSAPP
+   PASO FINAL
 ========================= */
 
-.order-section {
-    margin-top: 35px;
-    text-align: center;
+.final-step {
+    max-width: 600px;
+    margin: 0 auto;
 }
+
+.success-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background: rgba(223, 166, 183, 0.2);
+    color: var(--rosa-oscuro);
+    font-size: 2.5rem;
+}
+
+.final-step h2 {
+    margin-bottom: 20px;
+}
+
+.final-step > p {
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.final-step > p strong {
+    font-weight: normal;
+    color: var(--rosa-oscuro);
+}
+
+
+/* =========================
+   RESUMEN
+========================= */
+
+.cake-summary {
+    margin: 28px 0;
+    padding: 22px;
+    border: 1px solid rgba(199, 123, 145, 0.2);
+    border-radius: 18px;
+    background: rgba(255, 249, 245, 0.8);
+    text-align: left;
+    white-space: pre-line;
+    line-height: 1.9;
+    font-size: 0.92rem;
+}
+
+
+/* =========================
+   BOTÓN WHATSAPP
+========================= */
 
 .whatsapp-button {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    min-height: 50px;
+    margin: 25px auto 18px;
+    padding: 15px 25px;
+    box-sizing: border-box;
     border: none;
-
-    padding: 16px 28px;
-
     border-radius: 30px;
-
     background: var(--rosa);
-
     color: white;
-
+    font-family: inherit;
     font-size: 1rem;
-
     cursor: pointer;
-
     transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .whatsapp-button:hover {
     background: var(--rosa-oscuro);
-
     transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(199, 123, 145, 0.25);
+}
 
-    box-shadow:
-        0 10px 20px rgba(199, 123, 145, 0.25);
+.final-step > .prev-step {
+    margin-top: 5px;
+}
+
+
+/* =========================
+   ACCESIBILIDAD
+========================= */
+
+button:focus-visible {
+    outline: 2px solid var(--rosa-oscuro);
+    outline-offset: 4px;
 }
 
 
@@ -1031,177 +542,135 @@
 @media (max-width: 600px) {
 
     .personalizadas-page {
-        padding: 70px 20px 50px;
+        padding: 75px 15px 45px;
     }
 
     .personalizadas-header {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
 
     .personalizadas-header h1 {
-        font-size: 2.7rem;
+        font-size: 2.5rem;
     }
 
-    .personalizadas-options {
-        grid-template-columns: 1fr;
-        gap: 14px;
-    }
-
-    .personalizada-option {
-        min-height: 140px;
-        padding: 25px 22px;
-    }
-
-    .personalizada-option h2 {
-        font-size: 1.5rem;
-    }
-
-    .personalizada-option p {
-        font-size: 0.82rem;
-    }
-
-    .personalizada-option .arrow {
-        opacity: 1;
-        transform: translateX(0);
+    .personalizadas-header p {
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 
     .back-button {
-        top: 25px;
-        left: 20px;
+        top: 22px;
+        left: 18px;
         font-size: 0.85rem;
-        padding: 8px 13px;
     }
 
-
     .cake-builder {
-        padding: 35px 15px 45px;
+        padding: 28px 16px 35px;
         border-radius: 22px;
     }
 
-    .cake-intro h2 {
-        font-size: 1.6rem;
+    .steps-progress {
+        margin-bottom: 32px;
     }
 
-    .cake {
-        transform: scale(0.75);
-        transform-origin: center center;
-        margin: 0 auto 25px;
+    .builder-step h2 {
+        font-size: 1.75rem;
     }
 
-    .filling-option {
-        padding: 8px 4px;
+    .builder-step > p {
+        font-size: 0.92rem;
     }
 
-    .filling-name {
+    .size-options,
+    .height-options {
+        gap: 10px;
+        margin: 25px auto;
+    }
+
+    .size-option,
+    .height-option {
+        min-height: 115px;
+        padding: 17px 10px;
+        border-radius: 16px;
+    }
+
+    .size-option strong,
+    .height-option strong {
+        font-size: 1.2rem;
+    }
+
+    .size-option span,
+    .height-option span {
         font-size: 0.78rem;
     }
 
-
-}
-
-/* =========================
-   CELULAR - CONSTRUCTOR
-========================= */
-
-@media (max-width: 600px) {
-
-    .cake-builder {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 30px 15px 45px;
+    .step-navigation {
+        gap: 10px;
+        margin-top: 28px;
     }
 
-    /* Torta arriba y opciones abajo */
-    .cake-customizer {
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
-        width: 100%;
+    .prev-step,
+    .next-step {
+        padding: 12px 18px;
+        font-size: 0.88rem;
     }
-
-    /* =========================
-       PREVIEW TORTA
-    ========================= */
-
-    .cake-preview {
-        width: 100%;
-        position: relative;
-        top: auto;
-    }
-
-    .cake-preview .cake {
-        margin: 0 auto 25px;
-        transform: scale(0.75);
-        transform-origin: center center;
-    }
-
-    /* Evita que el contenedor se achique por el scale */
-    .cake-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    /* =========================
-       BOTÓN
-    ========================= */
-
-    .cake-button {
-        margin-top: -35px;
-        padding: 12px 22px;
-        font-size: 0.9rem;
-    }
-
-    /* =========================
-       SELECTOR
-    ========================= */
-
-    .filling-selector {
-        width: 100%;
-        max-width: none;
-    }
-
-    .filling-selector h3 {
-        font-size: 1.5rem;
-    }
-
-    /* =========================
-       CAPAS
-    ========================= */
 
     .layer-selector {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 16px;
+        padding: 15px 12px;
     }
 
-    /* =========================
-       OPCIONES
-    ========================= */
-
-    .filling-options {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
+    .layer-selector h3 {
+        font-size: 1.15rem;
     }
 
     .filling-option {
-        padding: 8px 2px;
+        gap: 9px;
+        padding: 10px 5px;
     }
 
     .filling-name {
-        font-size: 0.78rem;
+        font-size: 0.82rem;
     }
+
+    .other-option {
+        grid-template-columns: 19px minmax(0, auto);
+    }
+
+    .other-option .filling-name {
+        grid-column: 2;
+    }
+
+    .other-filling-input {
+        grid-column: 2 / 3;
+        margin-top: 5px;
+        font-size: 0.85rem;
+    }
+
+    .cake-summary {
+        padding: 17px;
+        font-size: 0.85rem;
+        overflow-wrap: anywhere;
+    }
+
+    .whatsapp-button {
+        font-size: 0.9rem;
+        padding: 14px 16px;
+    }
+
 }
 
-@media (max-width: 600px) {
 
-    .cake.size-18 {
-        width: 220px;
-    }
+/* =========================
+   REDUCIR ANIMACIONES
+========================= */
 
-    .cake.size-22 {
-        width: 260px;
+@media (prefers-reduced-motion: reduce) {
+
+    .builder-step,
+    #progressFill,
+    button {
+        animation: none !important;
+        transition: none !important;
     }
 
 }
