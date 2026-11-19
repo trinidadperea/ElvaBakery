@@ -20,6 +20,8 @@
 
     width: min(900px, 100%);
 
+    margin: 0 auto 50px;
+    
     text-align: center;
 
     position: relative;
